@@ -15,6 +15,9 @@ public class TitleManager : MonoBehaviour {
 		
 	}
 	public void PushStartButton(){
+		SceneManager.LoadScene ("menuScene");
+	}
+	public void PushStage1Button(){
 		SceneManager.LoadScene ("mainscene");
 	}
 }

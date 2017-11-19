@@ -6,17 +6,19 @@ using UnityEngine.SceneManagement;
 
 
 public class GameOverButton : MonoBehaviour {
+	GameObject GameOver;
 
 	// Use this for initialization
 	void  Start () {
-		gameObject.GetComponent<Text>().enabled = false;
-		gameObject.GetComponent<Image>().enabled = false;
+		//transform.GetComponent<Image>.enabled = false;
+		gameObject.SetActive (false);
+
 
 	}
 	
 	// Update is called once per frame
 	public void Lose () {
-		gameObject.GetComponent<Text>().enabled = true;
+		//gameObject.GetComponent<Text>().enabled = true;
 
 
 		}
@@ -32,3 +34,12 @@ public class GameOverButton : MonoBehaviour {
 //UIボタンでタイトルへ戻るがでる
 //押すとタイトルシーンへ移動
 //非表示
+
+
+//わからないこと
+//ゲーム開始時点で非表示のオブジェクト(ボタン)を任意タイミングで表示する方法
+
+
+//GameoverスクリプトでLose メソッドを書いてそこでオブジェクトを有効化する?
+//→非表示オブジェクトについているスクリプトは無効化されている。どうやって有効化する？
+//SetActiveでfalseにしたオブジェクトを外部からtrueにする　オブジェクトを変数として保持しておく

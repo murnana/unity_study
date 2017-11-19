@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemyBulletController : MonoBehaviour {
 	public GameObject EnemyBulletPrefab;
+	public int damage = 1;
 
 	// Use this for initialization
 	void Start () {

@@ -55,15 +55,15 @@
      <Compile Include="Assets\Resouces\Stagit\SkyboxEarthPlanets\script\skyboxspace_demo_v1.cs" />
      <Compile Include="Assets\Resouces\Stagit\SkyboxEarthPlanets\script\skyboxspace_mouselook_v1.cs" />
      <Compile Include="Assets\Scripts\BulletController.cs" />
-     <Compile Include="Assets\Scripts\ButtonTuggle.cs" />
      <Compile Include="Assets\Scripts\commonMovableplayer.cs" />
      <Compile Include="Assets\Scripts\EnemyBulletController.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
+     <Compile Include="Assets\Scripts\Explosion.cs" />
      <Compile Include="Assets\Scripts\GameOverButton.cs" />
      <Compile Include="Assets\Scripts\LifeBarCTRL.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\PlayerLife.cs" />
      <Compile Include="Assets\Scripts\TitleManager.cs" />
+     <Compile Include="Assets\Scripts\wavechecker.cs" />
      <None Include="Assets\Resouces\Stagit\SkyboxEarthPlanets\readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

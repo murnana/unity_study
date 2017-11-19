@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class LifeBarCTRL : MonoBehaviour {
 	GameObject player;
-	PlayerLife Lifecomp;
+	PlayerController Lifecomp;
 	public Slider Lifeslider;
 	public int Life;
 
@@ -15,7 +15,7 @@ public class LifeBarCTRL : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("Player");
-		Lifecomp = player.GetComponent<PlayerLife> ();
+		Lifecomp = player.GetComponent<PlayerController> ();
 
 		Lifeslider = GameObject.Find ("Slider").GetComponent<Slider> ();
 		Life = 100;

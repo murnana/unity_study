@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212341052567884266}
   - component: {fileID: 114079001810626006}
   - component: {fileID: 58801692483477540}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnemyBullet Prefab
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -68,7 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3f5862befa88f44990c83b8eaf7150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyBulletPrefab: {fileID: 0}
+  EnemyBulletPrefab: {fileID: 1755466258426928}
+  damage: 10
 --- !u!212 &212341052567884266
 SpriteRenderer:
   m_ObjectHideFlags: 1
