@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour {
 	public int EnemyAttack;
 
 	public bool Destroy;
-
+	public wavechecker wavechecker;
 
 
 
@@ -36,11 +36,10 @@ public class EnemyController : MonoBehaviour {
 			Destroy = true;
 		}
 		if (Destroy == true) {
+			
+			wavechecker.Invokeset ();
 			Explosion ();
-			/////////////////ここで終了////////////////
-			//Invoke ("wavechercker", 5);
-			//Invoke使って別スクリプトからメソッドを呼び出す
-			//Debug.Log ("呼び出したよ");
+			Destroy = false;
 		
 		}
 	
@@ -64,9 +63,18 @@ public class EnemyController : MonoBehaviour {
 		Instantiate (explosion,transform.position,transform.rotation);
 		Destroy (gameObject);
 	}
-	public void wavechecker(){
-		Debug.Log ("ok");
-		Instantiate (Enemy, transform.position, Quaternion.identity);
-	}
-			
+
 }
+
+
+//攻撃の種類
+//アイテム：自分の攻撃が2列になる、HP回復、一定時間無敵
+//敵のドロップ
+//
+
+
+//回復アイテム  下に一定速度で移動、当たり判定、Destoroy、プレイヤーのHP参照、回復処理
+//回復アイテム側の当たり判定でplayercontrollerの(仮)healを呼び出す
+//healの中でLifeに数値を+
+//+する値を一定に固定
+//回復アイテムの発生条件or発生タイミング

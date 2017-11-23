@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour {
 
 	public bool CanMove;
 	public bool LoseCheck;
+	public bool CanTakenDamage;
+
+	public float nodamagetime;
 
 
 	// Use this for initialization
@@ -29,6 +32,7 @@ public class PlayerController : MonoBehaviour {
 		CanMove = true;
 		Life = maxLife;
 		LoseCheck = false;
+		CanTakenDamage = true;
 
 	}
 	
@@ -78,14 +82,31 @@ public class PlayerController : MonoBehaviour {
 		Debug.Log ("あああ");
 		if (hit.CompareTag ("Bullet")) {
 
+			if(CanTakenDamage == true){
 			//当たった相手のスクリプトを参照したい時の文
-			int EneATK = hit.GetComponent<EnemyBulletController>().damage;
+			int EneATK = hit.GetComponent<EnemyBulletController> ().damage;
 
 		
 			Life -= EneATK;
 			Debug.Log ("当たったよ");
 			//Debug.Log (Life);
+			}
 
+		}
+		if (hit.CompareTag ("heal")) {
+			int healitem = hit.GetComponent<heal> ().healvalue;
+			Life = Mathf.Min (Life + healitem, maxLife);
+				
+				Destroy (hit.gameObject);
+
+		}
+		if(hit.CompareTag("nodamage")){
+			CanTakenDamage = false;
+			nodamagetime += Time.deltaTime;
+			if (nodamagetime >= 3) {
+				CanTakenDamage = true;
+				nodamagetime = 0;
+			}
 		}
 	}
 

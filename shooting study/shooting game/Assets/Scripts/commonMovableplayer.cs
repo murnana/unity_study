@@ -14,8 +14,5 @@ public class commonMovableplayer : MonoBehaviour {
 	public void shot(Transform origin){
 		Instantiate (bullet, origin.position, origin.rotation);
 	}
-
-	public void move(Vector2 direcrion){
-		GetComponent<Rigidbody2D> ().velocity = direcrion * speed;
-	}
+		
 }
