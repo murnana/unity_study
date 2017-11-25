@@ -1,23 +1,26 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerItem.cs">
     <Files>
-      <File FileName="Assets\Scripts\TitleManager.cs" Line="23" Column="2" />
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="95" Column="4" />
-      <File FileName="Assets\Scripts\BulletController.cs" Line="15" Column="30" />
-      <File FileName="Assets\Scripts\EnemyController.cs" Line="80" Column="16" />
-      <File FileName="Assets\Scripts\EnemyBulletController.cs" Line="12" Column="3" />
-      <File FileName="Assets\Scripts\commonMovableplayer.cs" Line="17" Column="3" />
+      <File FileName="Assets\Scripts\TitleManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="116" Column="35" />
+      <File FileName="Assets\Scripts\BulletController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EnemyController.cs" Line="81" Column="1" />
+      <File FileName="Assets\Scripts\EnemyBulletController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\commonMovableplayer.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\LifeBarCTRL.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GameOverButton.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Explosion.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\wavechecker.cs" Line="13" Column="2" />
+      <File FileName="Assets\Scripts\wavechecker.cs" Line="10" Column="27" />
       <File FileName="Assets\Scripts\heal.cs" Line="17" Column="2" />
-      <File FileName="Assets\Scripts\ItemCreater.cs" Line="34" Column="50" />
+      <File FileName="Assets\Scripts\ItemCreater.cs" Line="10" Column="2" />
+      <File FileName="Assets\Scripts\PlayerItem.cs" Line="45" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <RunToCursorBreakpoint file="C:\Users\Tatsuyuki-PC\Documents\Unity project\shooting game\Assets\Scripts\PlayerItem.cs" line="7" column="15" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

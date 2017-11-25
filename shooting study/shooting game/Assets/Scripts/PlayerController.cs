@@ -22,8 +22,10 @@ public class PlayerController : MonoBehaviour {
 	public bool CanMove;
 	public bool LoseCheck;
 	public bool CanTakenDamage;
+	public bool splitbeam;
 
 	public float nodamagetime;
+	public float splittime;
 
 
 	// Use this for initialization
@@ -33,7 +35,7 @@ public class PlayerController : MonoBehaviour {
 		Life = maxLife;
 		LoseCheck = false;
 		CanTakenDamage = true;
-
+		splitbeam = false;
 	}
 	
 	// Update is called once per frame
@@ -57,14 +59,45 @@ public class PlayerController : MonoBehaviour {
 			if (Input.GetKey (KeyCode.Space) && frame % count == 0) {
 				//GameObject bulletPrefab = GameObject.Instantiate (Prefab)as GameObject;
 
-				Instantiate (Prefab, transform.position, Quaternion.identity);
+				if (splitbeam != true) {
+					Instantiate (Prefab, transform.position, Quaternion.identity);
+				} else {
+					for (int k = 0; k < transform.childCount; k++) {
+						Transform splitshotposition = transform.GetChild (k);
+						Shot (splitshotposition);
+					}
+				}
 			}
-		}
+		
+				//specialアイテムを取得時splitbeamがtrueに変わる
+				//自機から出る攻撃が複数列になる→Instantiateでx成分のみいじってどうにか
+				//最初からshotposを作っておいて、各posごとにCanShotを分ける→On/Off
+
+				//if(splitbeam == true){
+					//Instantiate (Prefab, transform.position, Quaternion.identity);
+
+			}
 		if (Life <= 0) {
 			//Debug.Log ("GameOver");
 			GameoverControll ();
 			LoseCheck = true;
 		}
+
+		if (CanTakenDamage == false) {
+			nodamagetime += Time.deltaTime;
+			if (nodamagetime >= 3) {
+				nodamagetime = 0;
+				CanTakenDamage = true;
+			}
+		}
+		if (splitbeam == true) {
+			splittime += Time.deltaTime;
+			if (splittime >= 10) {
+				splittime = 0;
+				splitbeam = false;
+			}
+		}
+	
 	}
 	void Clamp(){
 		//移動可能範囲の設定
@@ -88,8 +121,10 @@ public class PlayerController : MonoBehaviour {
 
 		
 			Life -= EneATK;
-			Debug.Log ("当たったよ");
-			//Debug.Log (Life);
+			
+				if(splitbeam == true){
+					splitbeam = false;
+				}
 			}
 
 		}
@@ -100,17 +135,18 @@ public class PlayerController : MonoBehaviour {
 				Destroy (hit.gameObject);
 
 		}
-		if(hit.CompareTag("nodamage")){
+		if (hit.CompareTag("nodamage")) {
+		
 			CanTakenDamage = false;
-			nodamagetime += Time.deltaTime;
-			if (nodamagetime >= 3) {
-				CanTakenDamage = true;
-				nodamagetime = 0;
+			Destroy (hit.gameObject);
 			}
+		if (hit.CompareTag ("special")) {
+			splitbeam = true;
+			Destroy (hit.gameObject);
 		}
 	}
 
-	void GameoverControll ()
+		void GameoverControll ()
 	{
 		if (LoseCheck == true) {
 
@@ -118,4 +154,10 @@ public class PlayerController : MonoBehaviour {
 			CanMove = false;
 		}
 	}
-}
+	public void Shot(Transform origin){
+
+			Instantiate (Prefab, origin.position, origin.rotation);
+		}
+	
+	}
+
