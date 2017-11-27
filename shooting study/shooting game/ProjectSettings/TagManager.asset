@@ -9,6 +9,7 @@ TagManager:
   - heal
   - nodamage
   - special
+  - item
   layers:
   - Default
   - TransparentFX

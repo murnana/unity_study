@@ -15,15 +15,12 @@ public class GameOverButton : MonoBehaviour {
 
 
 	}
-	
-	// Update is called once per frame
-	public void Lose () {
-		//gameObject.GetComponent<Text>().enabled = true;
 
-
-		}
 	public void PushGameoverButton(){
 		SceneManager.LoadScene ("Titlescene");
+	}
+	public void PushStageClearButton(){
+		SceneManager.LoadScene ("menuscene");
 	}
 
 }

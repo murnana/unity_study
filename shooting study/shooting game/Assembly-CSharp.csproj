@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\Explosion.cs" />
      <Compile Include="Assets\Scripts\ExplosionExit.cs" />
+     <Compile Include="Assets\Scripts\gameclear.cs" />
      <Compile Include="Assets\Scripts\GameOverButton.cs" />
      <Compile Include="Assets\Scripts\heal.cs" />
      <Compile Include="Assets\Scripts\ItemCreater.cs" />

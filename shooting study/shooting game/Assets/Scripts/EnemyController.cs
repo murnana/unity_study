@@ -6,12 +6,14 @@ public class EnemyController : MonoBehaviour {
 	public GameObject enemybullet;
 	public GameObject explosion;
 	public GameObject Enemy;
+	public GameObject DropItem;
 
 	private int count = 0;
 	//commonMovableplayer commonmovableplayer;
 	public bool CanShotBullet;
 	public int EnemyLife;
 	public int EnemyAttack;
+	public int DropItemstack;
 
 	public bool Destroy;
 	public wavechecker wavechecker;
@@ -39,16 +41,19 @@ public class EnemyController : MonoBehaviour {
 			
 			wavechecker.Invokeset ();
 			Explosion ();
+			itemdrop ();
 			Destroy = false;
 		
 		}
 	
 
 	}
+	//敵が弾を撃つ
 	public void EnemyShot(){
 		GameObject Enebullet = Instantiate (enemybullet,transform.position,Quaternion.identity)as GameObject;
 
 		}
+	//HPが減る処理
 	void OnTriggerEnter2D (Collider2D hit){
 		Debug.Log ("いいい");
 		if (hit.CompareTag ("playerBullet")) {
@@ -58,11 +63,37 @@ public class EnemyController : MonoBehaviour {
 			//Debug.Log ("的に当たったよ");
 		}
 	}
+	//爆発を作成
 	public void Explosion ()
 	{	Debug.Log ("ここまでok");
 		Instantiate (explosion,transform.position,transform.rotation);
 		Destroy (gameObject);
 	}
+	public void itemdrop(){
+
+		Vector2 pos_enemylast = transform.position;//撃破位置
+		//Vector2 random = new Vector2(0,0);
+
+		//pos_item.x = Mathf.Clamp (pos_item.x, pos_enemylast.x - 0.3f,pos_enemylast.x + 0.3f);
+		//pos_item.y = Mathf.Clamp (pos_item.y, pos_enemylast.y - 0.3f,pos_enemylast.y + 0.3f);
+
+
+		//DropItemstackの値の分だけInstantiateされる(アイテムが生成される)
+		int i = 1;
+		while(i<= DropItemstack){
+			float random_x = Random.Range (pos_enemylast.x - 0.3f, pos_enemylast.x + 0.3f);
+			float random_y = Random.Range (pos_enemylast.y - 0.3f, pos_enemylast.y + 0.3f);
+
+			Vector2 droprange = new Vector2 (random_x, random_y);
+		Instantiate (DropItem, droprange, Quaternion.identity);
+			i++;
+		}
+	}
+
+		//Destoroyがtrueになったら呼び出される
+		//敵の撃破位置を中心とした一定範囲
+		//一定範囲内で、Itemオブジェクトをランダム位置に配置する
+		//ドロップする個数を設定できるようにする→繰り返し回数を設定する
 
 }
 
