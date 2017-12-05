@@ -59,13 +59,14 @@
      <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\Explosion.cs" />
      <Compile Include="Assets\Scripts\ExplosionExit.cs" />
-     <Compile Include="Assets\Scripts\gameclear.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\GameOverButton.cs" />
      <Compile Include="Assets\Scripts\heal.cs" />
      <Compile Include="Assets\Scripts\ItemCreater.cs" />
      <Compile Include="Assets\Scripts\LifeBarCTRL.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerItem.cs" />
+     <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\TitleManager.cs" />
      <Compile Include="Assets\Scripts\Wave.cs" />
      <Compile Include="Assets\Scripts\wavechecker.cs" />

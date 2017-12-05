@@ -38,5 +38,4 @@ public class ItemCreater : MonoBehaviour {
 		}
 	}
 }
-//////////////////////////////注目//////////////////////////////////////
-//なぜかnodamageアイテムを拾ってもCanTakendamageがfalseにならなかった
+

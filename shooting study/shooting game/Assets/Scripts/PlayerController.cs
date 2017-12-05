@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour {
 	public static int count;//発射間隔
 	int frame;
 	public int playerATK;
+	public int TakenDamage;
+	public int TakenDamageCount;
 
 	public bool CanMove;
 	public bool LoseCheck;
@@ -36,6 +38,7 @@ public class PlayerController : MonoBehaviour {
 		LoseCheck = false;
 		CanTakenDamage = true;
 		splitbeam = false;
+		TakenDamage = 0;
 	}
 	
 	// Update is called once per frame
@@ -118,6 +121,9 @@ public class PlayerController : MonoBehaviour {
 			if(CanTakenDamage == true){
 			//当たった相手のスクリプトを参照したい時の文
 			int EneATK = hit.GetComponent<EnemyBulletController> ().damage;
+				TakenDamageCount += 1;
+
+				TakenDamage = TakenDamageCount * EneATK;
 
 		
 			Life -= EneATK;

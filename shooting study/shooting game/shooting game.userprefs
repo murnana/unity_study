@@ -1,21 +1,22 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\gameclear.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\wavechecker.cs">
     <Files>
       <File FileName="Assets\Scripts\TitleManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="33" Column="14" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="42" Column="3" />
       <File FileName="Assets\Scripts\BulletController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EnemyController.cs" Line="42" Column="16" />
+      <File FileName="Assets\Scripts\EnemyController.cs" Line="55" Column="14" />
       <File FileName="Assets\Scripts\EnemyBulletController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\commonMovableplayer.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\LifeBarCTRL.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameOverButton.cs" Line="14" Column="28" />
+      <File FileName="Assets\Scripts\GameOverButton.cs" Line="22" Column="32" />
       <File FileName="Assets\Scripts\Explosion.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\wavechecker.cs" Line="20" Column="1" />
-      <File FileName="Assets\Scripts\heal.cs" Line="17" Column="2" />
-      <File FileName="Assets\Scripts\ItemCreater.cs" Line="10" Column="2" />
-      <File FileName="Assets\Scripts\PlayerItem.cs" Line="21" Column="4" />
-      <File FileName="Assets\Scripts\gameclear.cs" Line="23" Column="84" />
+      <File FileName="Assets\Scripts\wavechecker.cs" Line="127" Column="30" />
+      <File FileName="Assets\Scripts\heal.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ItemCreater.cs" Line="41" Column="1" />
+      <File FileName="Assets\Scripts\PlayerItem.cs" Line="64" Column="21" />
+      <File FileName="Assets\Scripts\GameManager.cs" Line="33" Column="10" />
+      <File FileName="Assets\Scripts\Score.cs" Line="42" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

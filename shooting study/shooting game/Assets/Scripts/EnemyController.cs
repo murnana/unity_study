@@ -9,24 +9,37 @@ public class EnemyController : MonoBehaviour {
 	public GameObject DropItem;
 
 	private int count = 0;
-	//commonMovableplayer commonmovableplayer;
+
 	public bool CanShotBullet;
 	public int EnemyLife;
 	public int EnemyAttack;
 	public int DropItemstack;
+	public int DeathCount;
+	public float InTime;
 
 	public bool Destroy;
-	public wavechecker wavechecker;
+	wavechecker a;
+	GameManager b;
 
 
 
 	// Use this for initialization
 	void Start () {
-		CanShotBullet = true;
+		CanShotBullet = false;
 		Destroy = false;
+		DeathCount = 0;
+		InTime = 0;
 	}
 	// Update is called once per frame
 	void Update () {
+		InTime +=Time.deltaTime;
+		if (0f <= InTime && InTime<= 1.2f) {
+			transform.Translate (0, -0.05f, 0);
+		}
+		//要調整
+		if (InTime >= 1.7f) {
+			CanShotBullet = true;
+		}
 		count++;
 		//80フレームごとにメソッドを実行
 		if (CanShotBullet == true) {
@@ -38,9 +51,14 @@ public class EnemyController : MonoBehaviour {
 			Destroy = true;
 		}
 		if (Destroy == true) {
-			
-			wavechecker.Invokeset ();
+			b = GameObject.Find ("GameManager").GetComponent<GameManager> ();
+			b.CountCheck ();
+			a = GameObject.Find ("Wavechecker").GetComponent<wavechecker> ();
+			//今→敵を倒すと次のInstantiateを呼ぶ
+		
+
 			Explosion ();
+			a.Invokeset ();
 			itemdrop ();
 			Destroy = false;
 		
@@ -72,13 +90,7 @@ public class EnemyController : MonoBehaviour {
 	public void itemdrop(){
 
 		Vector2 pos_enemylast = transform.position;//撃破位置
-		//Vector2 random = new Vector2(0,0);
 
-		//pos_item.x = Mathf.Clamp (pos_item.x, pos_enemylast.x - 0.3f,pos_enemylast.x + 0.3f);
-		//pos_item.y = Mathf.Clamp (pos_item.y, pos_enemylast.y - 0.3f,pos_enemylast.y + 0.3f);
-
-
-		//DropItemstackの値の分だけInstantiateされる(アイテムが生成される)
 		int i = 1;
 		while(i<= DropItemstack){
 			float random_x = Random.Range (pos_enemylast.x - 0.3f, pos_enemylast.x + 0.3f);
@@ -98,20 +110,21 @@ public class EnemyController : MonoBehaviour {
 }
 
 
-//攻撃の種類
-//アイテム：自分の攻撃が2列になる、HP回復、一定時間無敵
-//敵のドロップ
-//敵を倒した時にパーティクルでアイテムを表示
-//当たり判定で取得→テキストで取得数を表示
+//増やす敵の種類(増やす方法がわからない)
+//体力が多い敵、攻撃が2列の敵、一定確率で弾が当たらない敵、アイテムを多く落とす敵+一定時間で帰っちゃう
+//倒すと固定砲台になり、敵を撃ってくれる敵、倒すと障害物になる敵
+
+//敵を複数出す方法
+//Instantiateで座標を変えてループ？
+//
+
+//場面ごとに敵の出現数を変える方法がわからない
 
 
-//わかんないリスト
-//ドロップさせる仕組み
-//アイテム一つ一つのデータの取得
 
-//敵から湧き出たときは固定のアイテム(パーティクル):アイテムじゃない	trigger指定して、当たったときに関数呼出し
-//取得させる時にアイテム確定？→乱数とif文でアイテムを決定:アイテムになる
+//確実に起こるバグ
+//敵に接触したら敵が死ぬ→レイヤーであたり判定をなくして改善終了
 
-//アイテム決定後の保持がわかんない→アイテム管理スクリプト作って配列でID管理
-//連装はいれちゅ
-//アイテムを数える(増やす)、アイテムの数の変数、名前、
+
+//再現性がわからないバグ
+//敵の湧きが途中で止まった
