@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\commonMovableplayer.cs" />
      <Compile Include="Assets\Scripts\EnemyBulletController.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
+     <Compile Include="Assets\Scripts\Enemylist.cs" />
      <Compile Include="Assets\Scripts\Explosion.cs" />
      <Compile Include="Assets\Scripts\ExplosionExit.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />

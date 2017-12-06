@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
 		
 	void Start(){
 		//敵の湧き上限
-		EnemySpawnCount = 18;
+		EnemySpawnCount = 21;
 		//表示するスコア
 		DestoroyScore = 0;
 		WaveCount = 0;

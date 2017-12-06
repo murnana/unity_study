@@ -14,7 +14,6 @@ public class wavechecker : MonoBehaviour {
 	public int SpawnSwitch;
 	public int EnemyAlive;
 
-	Vector2 hoge = new Vector2(0,6.4f);
 
 	void Update () {
 		EnemyCountChecker ("enemy");
@@ -38,6 +37,11 @@ public class wavechecker : MonoBehaviour {
 		
 
 	void wavecheck(){
+		//Random.Rangeで敵の沸く場所のx座標を指定したかった
+		//画面外に出ないように範囲を指定したい
+		Vector2 hoge = new Vector2 (0, 6.4f);
+		hoge.x = Mathf.Clamp (hoge.x, -2.5f, 2.5f);
+
 		if (EnemyAlive == 0 && SpawnCheck >=1) {
 			Debug.Log ("ok");
 			switch (SpawnSwitch) {
@@ -46,34 +50,24 @@ public class wavechecker : MonoBehaviour {
 				break;
 			case 1:
 				for (int i = 0; i <= 2; i++) {
+					float random = Random.Range (-3f, 3f);
+					hoge.x = hoge.x + random;
+
 					Instantiate (Enemy, hoge, Quaternion.identity);
-					if (i < 1) {
-						hoge.x += 2.0f;
-					} else if (i == 1) {
-						hoge.x -= 4.0f;
-					} else {
-						hoge.x += 1.5f;
-					}
-			
-					
+					hoge.x = hoge.x - random;
+					//ここで一番最初のhogeの座標に戻したい
 				}
 				break;
 			case 2:
 				for (int i = 0; i <= 3; i++) {
+					float randomm = Random.Range (-3f, 3f);
+					hoge.x = hoge.x + randomm;
+
 					Instantiate (Enemy, hoge, Quaternion.identity);
-					if (i < 1) {
-						hoge.x += 2.0f;
-					} else if (i == 1) {
-						hoge.x -= 4.0f;
-					} else if (i == 2) {
-						hoge.x += 1.5f;
-					} else {
-						hoge.y += 0.8f;
-					}
-					//繰り返しているため、画面外に出てしまう要修正
+					hoge.x = hoge.x - randomm;
 				}
 				break;
-			}
+			}//仮完成　座標決定方法要検討
 		}
 	}
 	void stageclear(){
@@ -120,8 +114,3 @@ public class wavechecker : MonoBehaviour {
 
 //敵の種類の増加
 
-
-
-//成果
-//waveで敵が増える処理を作った(未完成)
-//次回複数敵がわく処理の座標の決定手段を考えるところから
