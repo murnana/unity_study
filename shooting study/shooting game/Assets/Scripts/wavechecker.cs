@@ -97,7 +97,7 @@ public class wavechecker : MonoBehaviour {
 	void EnemyCountChecker(string tagname){
 		tagEnemy = GameObject.FindGameObjectsWithTag (tagname);
 		EnemyAlive = tagEnemy.Length;
-		Debug.Log ("おっけい");
+
 	}
 
 }
